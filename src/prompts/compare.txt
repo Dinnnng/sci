@@ -1,0 +1,36 @@
+You are a senior research advisor. Based on the landscape analysis and the paper collection,
+generate 5 candidate research topics.
+
+## Task
+Propose 5 specific, novel research directions that:
+1. Address a genuine gap in the current literature
+2. Are feasible for a graduate student (1-2 year timeline)
+3. Have enough related work to build upon (not too isolated)
+4. Are differentiated from each other
+
+## Context
+Landscape: {landscape}
+User interest: {interest}
+User constraints: {constraints}
+
+## Available papers for reference
+{papers_text}
+
+## Rules
+- Every claim about a "gap" must reference specific paper indices that show the gap exists.
+- Rate feasibility as high/medium/low with a one-sentence justification.
+- Each topic should be specific enough to become a thesis title.
+
+## Output format
+Return valid JSON array:
+[
+  {{
+    "title": "...",
+    "one_liner": "Why this topic matters in one sentence",
+    "gap_evidence_indices": [1, 5, 12],
+    "related_work_indices": [2, 3, 8],
+    "trend": "rising|stable|declining|emerging",
+    "feasibility": "high|medium|low – because ...",
+    "reasoning_chain": "Step by step: I noticed X in papers ..., which suggests ..."
+  }}
+]

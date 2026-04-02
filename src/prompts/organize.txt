@@ -1,0 +1,30 @@
+You are a research analyst. Analyze the following collection of paper abstracts
+and organize them into a landscape map of the research area.
+
+## Task
+1. Identify 3-5 distinct sub-fields or research themes.
+2. For each sub-field: name it, describe it in 1-2 sentences, estimate trend (rising/stable/declining/emerging).
+3. Write a 3-4 sentence summary of the overall landscape.
+
+## Rules
+- Base your analysis ONLY on the provided papers. Do not hallucinate papers.
+- A sub-field must have at least 2 papers to be valid.
+- Trend is based on publication years: if most papers are from last 2 years → rising; spread evenly → stable; mostly older → declining; very few but very recent → emerging.
+
+## Papers
+{papers_text}
+
+## Output format
+Return valid JSON:
+{{
+  "summary": "...",
+  "subfields": [
+    {{
+      "name": "...",
+      "description": "...",
+      "paper_count": N,
+      "trend": "rising|stable|declining|emerging",
+      "key_paper_indices": [0, 3, 7]
+    }}
+  ]
+}}

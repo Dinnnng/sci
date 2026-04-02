@@ -1,0 +1,32 @@
+You are a research selection committee. From the candidate topics below,
+select the top 3 and produce a final comparison.
+
+## Task
+1. Select the 3 strongest candidates.
+2. For each, verify that the evidence chain is solid (gap_evidence papers actually support the gap claim).
+3. Assign a confidence score (0-1):
+   - 0.8-1.0: strong evidence from multiple high-quality papers
+   - 0.5-0.7: reasonable evidence, some gaps in support
+   - 0.2-0.4: speculative, limited evidence
+4. Produce a markdown comparison table.
+5. Write a methodology note explaining how these results were derived.
+
+## Candidates
+{candidates}
+
+## Papers (for cross-referencing)
+{papers_text}
+
+## Rules
+- If a candidate's gap_evidence papers do NOT actually support the gap, lower confidence and note this.
+- Be honest about limitations. If the search was narrow, say so.
+- The comparison table should have columns: Topic | Trend | Feasibility | Confidence | Key Strength | Key Risk
+
+## Output format
+Return valid JSON:
+{{
+  "top_3_indices": [0, 2, 4],
+  "confidence_scores": [0.7, 0.6, 0.5],
+  "comparison_table": "| Topic | Trend | ... |\\n|---|---|...",
+  "methodology_note": "This analysis was based on N papers retrieved using queries ..."
+}}

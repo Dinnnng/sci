@@ -1,0 +1,29 @@
+# Environment
+.env
+
+# Claude
+.claude/
+CLAUDE.md
+
+# Design docs
+DESIGN.md
+design/
+docs/
+
+# Python
+__pycache__/
+*.py[cod]
+*.egg-info/
+dist/
+build/
+*.egg
+
+# IDE
+.vscode/
+.idea/
+*.swp
+*.swo
+
+# OS
+.DS_Store
+Thumbs.db
