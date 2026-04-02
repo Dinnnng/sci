@@ -69,8 +69,3 @@ pytest
 ├── pyproject.toml
 └── .env.example
 ```
-
-## Notes
-
-- 本仓库只保留运行项目所需代码与最小文档
-- 不包含本地私有配置、Claude 相关目录和设计文档
